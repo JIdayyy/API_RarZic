@@ -22,7 +22,7 @@ export function s3UploadFile(
   type: FileTypeResult | undefined
 ) {
   if (!type) {
-    throw new Error("Can't retrieve file type");
+    throw new Error("Can't check file type");
   }
 
   const params = {
@@ -33,7 +33,7 @@ export function s3UploadFile(
     Key: `${name}.${type.ext}`,
   } as PutObjectRequest;
 
-  console.log("starting upload to S3....");
+  console.log("Uploading ... please wait :)");
 
   return s3.upload(params).promise();
 }
