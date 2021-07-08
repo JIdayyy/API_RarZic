@@ -28,7 +28,7 @@ interface AlbumBodyPut {
 
 export default interface AlbumHandlers {
     getAll: RequestHandler<Record<string, never>, Album[], null>;
-    getOne: RequestHandler<{ id: string }, Album, null>;
+    getOne: RequestHandler<{ id: string }, Album | Error, null>;
     post: RequestHandler<Record<string, never>, Album | Error, AlbumBodyPost>;
     put: RequestHandler<
         Record<string, never>,

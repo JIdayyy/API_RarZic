@@ -24,7 +24,7 @@ interface ArtistBodyPut{
 
 export default interface ArtistHandlers{
     getAll: RequestHandler<Record<string, never>, Artist[], null>;
-    getOne: RequestHandler<Record<string,never>, Artist,null>
+    getOne: RequestHandler<{id: string}, Artist,null>
     post: RequestHandler<Record<string,never>,ArtistBodyPost | Error,ArtistBodyPost>
     put: RequestHandler<Record<string,never>, Artist | Error, ArtistBodyPut>
     deleteOne: RequestHandler<{id: string}, null,null>

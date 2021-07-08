@@ -3,12 +3,22 @@ GET http://localhost:5000/artists/
 
 
 ###
-GET http://localhost:5000/artists/1
+GET http://localhost:5000/artists/ckqv0gm7k0000lt6v3ns84oso
 
 
 ###
 POST http://localhost:5000/artists/
+Content-Type: application/json
 
-
+{
+  "name":"string",
+    "picture": "string"
+}
 ###
-PUT http://localhost:5000/artists/
+PUT http://localhost:5000/artists/ckqv0gm7k0000lt6v3ns84oso
+Content-Type: application/json
+
+{
+  "name":"adzad",
+    "picture": "strqdqzdzqqzdqzdqing"
+}
