@@ -7,11 +7,11 @@ interface Song {
   duration: string;
   updatedAt: Date;
   createdAt: Date;
-  artist: string;
+  artist?: string;
   artistId: string;
-  album: string;
+  album?: string;
   albumId: string;
-  playlist: string;
+  playlist?: string;
   playlistId: string;
 }
 interface SongBodyPost {
@@ -27,6 +27,7 @@ interface SongBodyPost {
 }
 
 export default interface SongHandlers {
+  getAll: RequestHandler<Record<string, never>, Song[], null>;
   post: RequestHandler<
     Record<string, never>,
     SongBodyPost | Error,

@@ -6,5 +6,5 @@ export async function mp3DurationString(
   ceiled -= minutes / 60;
   const seconds = ceiled % 60;
 
-  return `${minutes}:${seconds}`;
+  return `${minutes}:${Math.floor(seconds)}`;
 }
