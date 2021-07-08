@@ -1,0 +1,14 @@
+GET http://localhost:5000/artists/
+
+
+
+###
+GET http://localhost:5000/artists/
+
+
+###
+POST http://localhost:5000/artists/
+
+
+###
+PUT http://localhost:5000/artists/
