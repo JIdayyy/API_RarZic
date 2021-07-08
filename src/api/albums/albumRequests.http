@@ -1,5 +1,8 @@
 GET http://localhost:5000/albums/
 
+###
+GET http://localhost:5000/albums/ckqvba1bx0001hvvl13mwtp49/songs
+
 
 
 
@@ -9,7 +12,8 @@ Content-Type: application/json
 
 {
     "picture":"string",
-    "title":  "string"
+    "title":  "string",
+    "artistId": "ckqv422q90000j1vlmzunf2tm"
 }
 
 ###

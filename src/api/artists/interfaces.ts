@@ -1,32 +1,45 @@
 import { RequestHandler } from "express";
-
-
-interface Artist{
-    id: string,
-    createdAt: Date,
-    picture: string,
-    updatedAt: Date,
-    name:string,
+import Albums from "../albums/interfaces";
+interface Artist {
+  id: string;
+  createdAt: Date;
+  picture: string;
+  updatedAt: Date;
+  name: string;
 }
 
-interface ArtistBodyPost{
-    name:string,
-    picture: string,
+interface ArtistBodyPost {
+  name: string;
+  picture: string;
 }
 
-interface ArtistBodyPut{
-    id: string,
-    createdAt: Date,
-    picture: string,
-    updatedAt: Date,
-    name:string,
+interface ArtistBodyPut {
+  name: string;
+  picture: string;
 }
 
-export default interface ArtistHandlers{
-    getAll: RequestHandler<Record<string, never>, Artist[], null>;
-    getOne: RequestHandler<{id: string}, Artist,null>
-    post: RequestHandler<Record<string,never>,ArtistBodyPost | Error,ArtistBodyPost>
-    put: RequestHandler<Record<string,never>, Artist | Error, ArtistBodyPut>
-    deleteOne: RequestHandler<{id: string}, null,null>
+interface ArtistWithAlbums {
+  id: string;
+  createdAt: Date;
+  picture: string;
+  updatedAt: Date;
+  name: string;
+  albums: Array<object>;
 }
 
+export default interface ArtistHandlers {
+  getAll: RequestHandler<Record<string, never>, Artist[], null>;
+  getOne: RequestHandler<{ id: string }, Artist, null>;
+  getOneArtistWithAlbums: RequestHandler<
+    { id: string },
+    ArtistWithAlbums | Error,
+    null
+  >;
+  post: RequestHandler<
+    Record<string, never>,
+    ArtistBodyPost | Error,
+    ArtistBodyPost
+  >;
+  put: RequestHandler<Record<string, never>, Artist | Error, ArtistBodyPut>;
+  deleteOne: RequestHandler<{ id: string }, null, null>;
+}

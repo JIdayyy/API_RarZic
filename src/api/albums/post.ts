@@ -1,19 +1,27 @@
-import {PrismaClient} from '.prisma/client'
-import AlbumHandlers from './interfaces'
-const prisma = new PrismaClient()
+import { PrismaClient } from ".prisma/client";
+import AlbumHandlers from "./interfaces";
 
-const post : AlbumHandlers["post"] = async (req,res) => {
-    const albumPost = req.body
+const prisma = new PrismaClient();
 
-    try {
-        const album = await prisma.album.create({
-            data: albumPost
-        })
-        res.status(200).send(album)
-    } catch (error) {
-        console.log(error)
-        res.status(500).send(error)
-    }
-}
+const post: AlbumHandlers["post"] = async (req, res) => {
+  const { picture, title, artistId } = req.body;
 
-export default post
+  const albumPost = req.body;
+
+  try {
+    const album = await prisma.album.create({
+      data: {
+        picture: picture,
+        title: title,
+        artistId: artistId,
+      },
+    });
+
+    res.status(200).send(album);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+};
+
+export default post;
