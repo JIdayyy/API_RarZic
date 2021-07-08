@@ -73,7 +73,6 @@ const post: SongHandlers["post"] = async (req, res, next) => {
         album: {
           connectOrCreate: {
             create: {
-              picture: "ef",
               title: album,
               artist: {
                 connect: { name: albumartist },
@@ -85,7 +84,6 @@ const post: SongHandlers["post"] = async (req, res, next) => {
         artist: {
           connectOrCreate: {
             create: {
-              picture: "z",
               name: albumartist,
             },
             where: {
