@@ -3,25 +3,25 @@ import Albums from "../albums/interfaces";
 interface Artist {
   id: string;
   createdAt: Date;
-  picture: string;
+  picture?: string | null;
   updatedAt: Date;
   name: string;
 }
 
 interface ArtistBodyPost {
   name: string;
-  picture: string;
+  picture?: string | null;
 }
 
 interface ArtistBodyPut {
   name: string;
-  picture: string;
+  picture?: string | null;
 }
 
 interface ArtistWithAlbums {
   id: string;
   createdAt: Date;
-  picture: string;
+  picture?: string | null;
   updatedAt: Date;
   name: string;
   albums: Array<object>;

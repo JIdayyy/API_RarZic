@@ -4,7 +4,7 @@ interface Album {
   id: string;
   artistId: string;
   title: string;
-  picture: string;
+  picture?: string | null;
   songs?: Array<object>;
   createdAt: Date;
   updatedAt: Date;
@@ -16,19 +16,18 @@ interface AlbumBodyPost {
   title: string;
 }
 interface AlbumBodyPut {
-  id: string;
-  artistId: string;
-  createdAt: Date;
-  picture: string;
-  title: string;
+  artistId?: string;
+  createdAt?: Date;
+  picture?: string;
+  title?: string;
   updatedAt: Date;
 }
 
 interface AlbumWithSongs {
-  id: string;
+  id?: string;
   artistId: string;
   createdAt: Date;
-  picture: string;
+  picture?: string | null;
   title: string;
   updatedAt: Date;
   songs?: Array<object>;

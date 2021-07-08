@@ -11,8 +11,8 @@ interface Song {
   artistId: string;
   album?: string;
   albumId: string;
-  playlist?: string;
-  playlistId: string;
+  playlist?: string | null;
+  playlistId?: string | null;
 }
 interface SongBodyPost {
   title: string;
@@ -22,8 +22,8 @@ interface SongBodyPost {
   artistId: string;
   album?: string;
   albumId: string;
-  playlist?: string;
-  playlistId: string;
+  playlist?: string | null;
+  playlistId?: string | null;
 }
 
 export default interface SongHandlers {
