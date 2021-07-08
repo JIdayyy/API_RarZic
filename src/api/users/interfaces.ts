@@ -1,12 +1,12 @@
 import { RequestHandler } from "express";
 
 interface UserWithoutPassword {
-  
+
   firstName: string | null;
   lastName: string | null;
   username: string,
   roles: Array<string>;
-  
+
 }
 interface ReqBodyUserPost {
   firstName: string | null;
@@ -17,7 +17,7 @@ interface ReqBodyUserPost {
   roles: Array<string>;
 }
 interface ReqBodyUserPut {
-  
+
   firstName: string | null;
   lastName: string | null;
   password: string,
@@ -28,16 +28,16 @@ interface ReqBodyUserPut {
 
 export default interface UserHandlers {
   getAll: RequestHandler<Record<string, never>, UserWithoutPassword[], null>;
-  getOne: RequestHandler<{id: string}, UserWithoutPassword | Error, null>,
+  getOne: RequestHandler<{ id: string }, UserWithoutPassword | Error, null>,
   post: RequestHandler<
-  Record<string, never>,
-  UserWithoutPassword | Error,
-  ReqBodyUserPost
->;
-put: RequestHandler<
-Record<string, never>,
-UserWithoutPassword | Error,
-ReqBodyUserPut
->;
-deleteOne: RequestHandler<{id: string}, null,null>
+    Record<string, never>,
+    UserWithoutPassword | Error,
+    ReqBodyUserPost
+  >;
+  put: RequestHandler<
+    Record<string, never>,
+    UserWithoutPassword | Error,
+    ReqBodyUserPut
+  >;
+  deleteOne: RequestHandler<{ id: string }, null, null>
 }
