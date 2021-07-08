@@ -19,17 +19,17 @@ model User {
 }
 
 model Song {
+  id         String    @id @default(cuid())
+  title      String    @unique
+  s3Link     String
+  duration   String
   album      Album     @relation(fields: [albumId], references: [id])
   albumId    String
   artist     Artist    @relation(fields: [artistId], references: [id])
-  artistId   String
-  createdAt  DateTime  @default(now())
-  duration   String
-  id         String    @id @default(cuid())
   playlist   Playlist? @relation(fields: [playlistId], references: [id])
   playlistId String?
-  s3Link     String
-  title      String
+  artistId   String
+  createdAt  DateTime  @default(now())
   updatedAt  DateTime  @updatedAt
 }
 
@@ -38,9 +38,9 @@ model Album {
   artistId  String
   createdAt DateTime @default(now())
   id        String   @id @default(cuid())
-  picture   String
+  picture   String?
   songs     Song[]
-  title     String
+  title     String   @unique
   updatedAt DateTime @updatedAt
 }
 
@@ -48,8 +48,8 @@ model Artist {
   albums    Album[]
   createdAt DateTime @default(now())
   id        String   @id @default(cuid())
-  name      String
-  picture   String
+  name      String   @unique
+  picture   String?
   songs     Song[]
   updatedAt DateTime @updatedAt
 }
@@ -59,6 +59,7 @@ model Playlist {
   description String?
   id          String   @id @default(cuid())
   songs       Song[]
-  title       String
+  title       String   @unique
   updatedAt   DateTime @updatedAt
+  picture     String?
 }

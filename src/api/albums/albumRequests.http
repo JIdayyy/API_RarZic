@@ -8,8 +8,7 @@ GET http://localhost:5000/albums/ckqvba1bx0001hvvl13mwtp49/songs
 
 ###
 POST http://localhost:5000/albums/
-Content-Type: application/json
-
+Content-Type: multipart/form-data
 {
     "picture":"string",
     "title":  "string",
