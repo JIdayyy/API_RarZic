@@ -1,16 +1,16 @@
 import { PrismaClient } from ".prisma/client";
-import PlaylistHandlers from "./interfaces";
+import SongHandlers from "./interfaces";
 
 const prisma = new PrismaClient();
-
-const put: PlaylistHandlers["put"] = async (req, res, next) => {
+const put: SongHandlers["put"] = async (req, res, next) => {
   const { id } = req.params;
+  const songDatas = req.body;
   try {
-    const playlist = await prisma.playlist.update({
+    const song = await prisma.song.update({
       where: {
         id,
       },
-      data: {},
+      data: songDatas,
     });
   } catch (error) {
     next(error);
