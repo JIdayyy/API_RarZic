@@ -5,12 +5,13 @@ const prisma = new PrismaClient();
 
 const put: PlaylistHandlers["put"] = async (req, res, next) => {
   const { id } = req.params;
+  const playlistPut = req.body;
   try {
     const playlist = await prisma.playlist.update({
       where: {
         id,
       },
-      data: {},
+      data: playlistPut,
     });
   } catch (error) {
     next(error);

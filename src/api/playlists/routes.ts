@@ -6,8 +6,8 @@ const router = Router();
 router.get("/", controller.getAll);
 router.get("/:id/songs", controller.getOnePlaylistWithSongs);
 router.get("/:id", controller.getOne);
-router.delete("/", controller.deleteOne);
+router.put("/:id", controller.put);
 router.post("/", controller.post);
-router.put("/", controller.put);
+router.delete("/", controller.deleteOne);
 
 export default router;

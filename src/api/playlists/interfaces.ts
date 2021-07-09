@@ -1,7 +1,6 @@
 import { RequestHandler } from "express";
 import { Song } from "../songs/interfaces";
-import { UserWithoutPassword } from "../users/interfaces";
-import {Artist} from "../artists/interfaces
+
 export interface Playlist {
   id: string;
   title: string;
@@ -14,6 +13,12 @@ export interface PlaylistBodyPost {
   description?: string | null;
   picture?: string | null;
 }
+export interface PlaylistBodyPut {
+  id: string;
+  title: string;
+  description?: string | null;
+  picture?: string | null;
+}
 
 export interface PlaylistWithSongs {
   id: string;
@@ -21,7 +26,6 @@ export interface PlaylistWithSongs {
   description?: string | null;
   picture?: string | null;
   songs: Song[];
-
 }
 
 export default interface PlaylistHandlers {
@@ -32,7 +36,7 @@ export default interface PlaylistHandlers {
     Playlist | Error,
     PlaylistBodyPost
   >;
-  put: RequestHandler<{ id: string }, Playlist | Error, null>;
+  put: RequestHandler<Record<string, never>, Playlist | Error, PlaylistBodyPut>;
   deleteOne: RequestHandler<{ id: string }, null, null>;
   getOnePlaylistWithSongs: RequestHandler<
     { id: string },

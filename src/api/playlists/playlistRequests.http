@@ -1,12 +1,39 @@
-GET http://localhost:5000/playlists/
+GET http://localhost:5000/playlists/ckqwdmbpb0022bsvlxchj4b6w/songs
 
+###
+###
+
+PUT http://localhost:5000/playlists/ckqwdm34u0011bsvlhqy0g2ig
+Content-Type: : application/json
+
+{
+    "title":"tedstsfnsth23333",
+    "description":"teqt",
+    "picture":"test"
+}
 ###
 
 POST http://localhost:5000/playlists/
 Content-Type: application/json
 
 {
-    "title":"tedst23333",
+    "title":"tedqzesdvvdst23333",
+    "description":"teqt",
+    "picture":"test"
+}
+
+###
+
+GET http://localhost:5000/playlists/
+
+
+###
+
+PUT http://localhost:5000/playlists/ckqwdm34u0011bsvlhqy0g2ig
+Content-Type: : application/json
+
+{
+    "title":"tedstsfnsth23333",
     "description":"teqt",
     "picture":"test"
 }
