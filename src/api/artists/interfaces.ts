@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
 import Albums from "../albums/interfaces";
-interface Artist {
+export interface Artist {
   id: string;
   createdAt: Date;
   picture?: string | null;

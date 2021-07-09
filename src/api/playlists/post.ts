@@ -8,6 +8,7 @@ const post: PlaylistHandlers["post"] = async (req, res, next) => {
     const playlist = await prisma.playlist.create({
       data: playlistData,
     });
+    res.status(201).send(playlist);
   } catch (error) {
     next(error);
   }

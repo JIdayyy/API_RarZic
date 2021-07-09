@@ -11,12 +11,18 @@ GET http://localhost:5000/artists/ckqv422q90000j1vlmzunf2tm/albums
 
 
 ###
-POST http://localhost:5000/artists/
+POST http://localhost:5000/albums/
 Content-Type: application/json
 
 {
-  "name":"string",
-    "picture": "string"
+ 
+  "name":"stdggfdgsfgfgqggring",
+  "picture": "string",
+  "title":"zfoin",
+  "artistName":"string",
+  "artist": {
+    "name":"string"
+  }
 }
 ###
 PUT http://localhost:5000/artists/ckqv0gm7k0000lt6v3ns84oso

@@ -7,12 +7,14 @@ GET http://localhost:5000/albums/ckqvfyb0f0003p8vl7wjy20e1/songs
 
 
 ###
+
+
 POST http://localhost:5000/albums/
 Content-Type: multipart/form-data
+
 {
-    "picture":"string",
-    "title":  "string",
-    "artistId": "ckqv422q90000j1vlmzunf2tm"
+  "name":"stdggfdgsfgfgqggring",
+  "picture": "string"
 }
 
 ###

@@ -1,1 +1,12 @@
 GET http://localhost:5000/playlists/
+
+###
+
+POST http://localhost:5000/playlists/
+Content-Type: application/json
+
+{
+    "title":"tedst23333",
+    "description":"teqt",
+    "picture":"test"
+}
