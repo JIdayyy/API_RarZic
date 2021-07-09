@@ -3,7 +3,7 @@ import AlbumHandlers from "./interfaces";
 
 const prisma = new PrismaClient();
 
-const post: AlbumHandlers["post"] = async (req, res) => {
+const post: AlbumHandlers["post"] = async (req, res, next) => {
   const { picture, title, artistId } = req.body;
 
   const albumPost = req.body;
@@ -20,7 +20,7 @@ const post: AlbumHandlers["post"] = async (req, res) => {
     res.status(200).send(album);
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    return next(error);
   }
 };
 

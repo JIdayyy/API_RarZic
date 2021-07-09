@@ -1,18 +1,18 @@
-import ArtistHandlers from "./interfaces";
+import PlaylistHandlers from "./interfaces";
 import { PrismaClient } from ".prisma/client";
 
 const prisma = new PrismaClient();
 
-const getOne: ArtistHandlers["getOne"] = async (req, res, next) => {
+const getOne: PlaylistHandlers["getOne"] = async (req, res, next) => {
   const { id } = req.params;
   try {
-    const artist = await prisma.artist.findUnique({
+    const Playlist = await prisma.playlist.findUnique({
       where: {
         id,
       },
       rejectOnNotFound: true,
     });
-    res.status(200).json(artist);
+    res.status(200).json(Playlist);
   } catch (error) {
     return next(error);
   }

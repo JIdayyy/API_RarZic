@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
 
-interface Song {
+export interface Song {
   id: string;
   title: string;
   s3Link: string;
