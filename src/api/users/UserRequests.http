@@ -31,21 +31,14 @@ Content-Type: application/json
 
 
 ### 
-PUT http://localhost:5000/users/ckr8mpooa00008uvlo2u5d8py
+GET http://localhost:5000/users/
 Content-Type: application/json
 
- {
-    "createdAt": "2021-07-08T08:49:24.787Z",
-    "firstName": "admizqdqzdn",
-    "password": "1231qzdqzdz2qzdzdqd3123",
- 
-    "lastName": "admin",
-    "roles": [
-      "admin"
-    ],
-    "updatedAt": "1970-01-01T00:00:00.000Z",
-    "username": "admin"
-  }
+
+{
+    "username":"Jidayyyyyyyy",
+    "password":"Jouillle01"
+}
 
 
 ### 

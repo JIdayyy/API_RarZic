@@ -1,9 +1,10 @@
 import { Router } from "express";
+import checkToken from "../../../Middleware/checkToken";
 
 import controller from "./controller";
 const router = Router();
 
-router.post("/", controller.post);
-router.get("/", controller.getAll);
+router.post("/", checkToken, controller.post);
+router.get("/", checkToken, controller.getAll);
 
 export default router;
