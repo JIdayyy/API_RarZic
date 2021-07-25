@@ -27,7 +27,7 @@ model Song {
   album      Album     @relation(fields: [albumId], references: [id])
   albumId    String
   artist     Artist    @relation(fields: [artistId], references: [id])
-  playlist   Playlist? @relation(fields: [playlistId], references: [id])
+  playlists  Playlist? @relation(fields: [playlistId], references: [id])
   playlistId String?
   artistId   String
   createdAt  DateTime  @default(now())
@@ -35,23 +35,23 @@ model Song {
 }
 
 model Album {
+  id        String   @id @default(cuid())
+  title     String   @unique
+  picture   String?
   artist    Artist   @relation(fields: [artistId], references: [id])
   artistId  String
-  createdAt DateTime @default(now())
-  id        String   @id @default(cuid())
-  picture   String?
   songs     Song[]
-  title     String   @unique
+  createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model Artist {
-  albums    Album[]
-  createdAt DateTime @default(now())
   id        String   @id @default(cuid())
   name      String   @unique
   picture   String?
   songs     Song[]
+  albums    Album[]
+  createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
@@ -61,8 +61,8 @@ model Playlist {
   description String?
   picture     String?
   songs       Song[]
-  User        User?    @relation(fields: [userId], references: [id])
-  userId      String?
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

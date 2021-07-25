@@ -33,7 +33,7 @@ export function s3UploadFile(
     Key: `${name}.${type.ext}`,
   } as PutObjectRequest;
 
-  console.log("Uploading ... please wait :)");
+  console.log("Uploading ... please wait :) !");
 
   return s3.upload(params).promise();
 }

@@ -6,18 +6,21 @@ export interface Playlist {
   title: string;
   description?: string | null;
   picture?: string | null;
+  userId: string;
 }
 export interface PlaylistBodyPost {
   id: string;
   title: string;
   description?: string | null;
   picture?: string | null;
+  userId: string;
 }
 export interface PlaylistBodyPut {
   id: string;
   title: string;
   description?: string | null;
   picture?: string | null;
+  userId: string;
 }
 
 export interface PlaylistWithSongs {
@@ -26,6 +29,7 @@ export interface PlaylistWithSongs {
   description?: string | null;
   picture?: string | null;
   songs: Song[];
+  userId: string;
 }
 
 export default interface PlaylistHandlers {

@@ -36,6 +36,7 @@ const post: AuthHandler["login"] = async (req, res, next) => {
       secure: false, // set to true if your using https
       httpOnly: true,
     });
+
     res.set({
       "Access-Control-Allow-Credentials": true,
     });

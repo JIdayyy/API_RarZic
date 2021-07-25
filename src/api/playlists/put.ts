@@ -13,6 +13,7 @@ const put: PlaylistHandlers["put"] = async (req, res, next) => {
       },
       data: playlistPut,
     });
+    res.sendStatus(204);
   } catch (error) {
     next(error);
   }
