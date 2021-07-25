@@ -21,3 +21,8 @@ PUT http://localhost:5000/artists/ckrjm0dl10000bvvldjkz93j8
   "name":"adzad",
   "picture": "strqdqzdzqqzdqzdqing"
 }
+
+###
+
+DELETE http://localhost:5000/artists/ckrjnpkw90006b5vl0s7kfuo2
+

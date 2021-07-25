@@ -1,6 +1,5 @@
 import { PrismaClient } from ".prisma/client";
 import AlbumHandlers from "./interfaces";
-
 const prisma = new PrismaClient();
 
 const deleteOne: AlbumHandlers["deleteOne"] = async (req, res, next) => {

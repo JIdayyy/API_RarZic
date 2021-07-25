@@ -50,5 +50,7 @@ export default gql`
     album(id: ID!): Album
     playlists: [Playlist]
     playlist(id: ID!): Playlist
+    users: [User]
+    user(id: ID!): User
   }
 `;

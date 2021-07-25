@@ -20,5 +20,5 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:5000/albums/ckribjlxd0003jvvl3wxc9g86
+DELETE http://localhost:5000/albums/ckrjlyix40000aevlbajyh2l6
 Content-Type:   application/json
