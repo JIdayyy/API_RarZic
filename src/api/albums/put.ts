@@ -3,6 +3,7 @@ import AlbumHandlers from "./interfaces";
 const prisma = new PrismaClient();
 
 const post: AlbumHandlers["put"] = async (req, res, next) => {
+  console.log("ok");
   const { id } = req.params;
   const albumPost = req.body;
   try {

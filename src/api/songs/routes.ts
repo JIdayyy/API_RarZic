@@ -7,6 +7,6 @@ router.get("/player", controller.getAllFull);
 router.get("/:id", controller.getOne);
 router.post("/", controller.post);
 router.put("/:id", controller.put);
-router.delete("/", controller.deleteOne);
+router.delete("/:id", controller.deleteOne);
 
 export default router;

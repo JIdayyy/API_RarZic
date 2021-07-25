@@ -4,7 +4,7 @@ import put from "./put";
 import getOne from "../albums/getOne";
 import post from "../albums/post";
 import getOneAlbumWithSongs from "./getOneAlbumWithSongs";
-import deleteOne from "../users/delete";
+import deleteOne from "./delete";
 const controller: AlbumHandlers = {
   getAll,
   post,

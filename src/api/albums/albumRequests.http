@@ -18,3 +18,7 @@ Content-Type: application/json
 "title":"test"
 }
 
+###
+
+DELETE http://localhost:5000/albums/ckribjlxd0003jvvl3wxc9g86
+Content-Type:   application/json
