@@ -1,10 +1,12 @@
 import { Router } from "express";
-import checkToken from "../../../Middleware/checkToken";
-
 import controller from "./controller";
 const router = Router();
 
-router.post("/", checkToken, controller.post);
-router.get("/", checkToken, controller.getAll);
+router.get("/", controller.getAll);
+router.get("/player", controller.getAllFull);
+router.get("/:id", controller.getOne);
+router.post("/", controller.post);
+router.put("/:id", controller.put);
+router.delete("/", controller.deleteOne);
 
 export default router;

@@ -1,6 +1,7 @@
 GET http://localhost:5000/playlists/ckqwdmbpb0022bsvlxchj4b6w/songs
 
 ###
+GET http://localhost:5000/playlists/
 ###
 
 PUT http://localhost:5000/playlists/ckqwdm34u0011bsvlhqy0g2ig
@@ -17,9 +18,10 @@ POST http://localhost:5000/playlists/
 Content-Type: application/json
 
 {
-    "title":"tedqzesdvvdst23333",
+    "title":"tedqz",
     "description":"teqt",
-    "picture":"test"
+    "picture":"test",
+    "userId":"ckriwychh00001qvluhol6avk"
 }
 
 ###

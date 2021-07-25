@@ -5,6 +5,7 @@ import artists from "./artists/routes";
 import playlists from "./playlists/routes";
 import songs from "./songs/routes";
 import auth from "./auth/routes";
+import checkToken from "../../Middleware/checkToken";
 const router = Router();
 router.use("/users", users);
 router.use("/albums", albums);

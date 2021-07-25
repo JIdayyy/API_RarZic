@@ -30,6 +30,16 @@ export default gql`
     description: String
     picture: String
     songs: [Song]
+    user: User
+  }
+  type User {
+    id: ID
+    firstName: String
+    lastName: String
+    picture: String
+    playlists: [Playlist]
+    role: String
+    username: String
   }
   type Query {
     songs: [Song]
@@ -38,5 +48,7 @@ export default gql`
     artist(id: ID!): Artist
     albums: [Album]
     album(id: ID!): Album
+    playlists: [Playlist]
+    playlist(id: ID!): Playlist
   }
 `;

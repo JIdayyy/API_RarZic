@@ -1,9 +1,10 @@
 import express from "express";
 import prisma from "../../../prisma/client";
+import SongHandlers from "./interfaces";
 
 const router = express.Router();
 
-router.get("/", async (req, res, next) => {
+const getAllFull: SongHandlers["getAllFull"] = async (req, res, next) => {
   try {
     const songs = await prisma.song.findMany({
       select: {
@@ -11,16 +12,27 @@ router.get("/", async (req, res, next) => {
         title: true,
         duration: true,
         s3Link: true,
+        createdAt: true,
+        updatedAt: true,
+        artistId: true,
+        albumId: true,
         artist: {
           select: {
             name: true,
             picture: true,
+            id: true,
+            createdAt: true,
+            updatedAt: true,
           },
         },
         album: {
           select: {
             title: true,
             picture: true,
+            id: true,
+            createdAt: true,
+            updatedAt: true,
+            artistId: true,
           },
         },
         playlists: {
@@ -36,4 +48,6 @@ router.get("/", async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-});
+};
+
+export default getAllFull;

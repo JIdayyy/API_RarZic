@@ -14,10 +14,9 @@ interface AlbumBodyPost {
   artistId: string;
   picture: string;
   title: string;
-  artistName: string
+  artistName: string;
 }
 interface AlbumBodyPut {
-  artistId?: string;
   createdAt?: Date;
   picture?: string;
   title?: string;

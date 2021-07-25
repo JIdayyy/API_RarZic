@@ -1,34 +1,23 @@
 GET http://localhost:5000/artists/
 
-
-
 ###
 GET http://localhost:5000/artists/ckqv422q90000j1vlmzunf2tm
-
 
 ###
 GET http://localhost:5000/artists/ckqv422q90000j1vlmzunf2tm/albums
 
-
 ###
-POST http://localhost:5000/albums/
+POST http://localhost:5000/artists/
 Content-Type: application/json
 
 {
- 
-  "name":"stdggfdgsfgfgqggring",
-  "picture": "string",
-  "title":"zfoin",
-  "artistName":"string",
-  "artist": {
-    "name":"string"
-  }
+  "name":"test",
+  "picture": "string"
 }
 ###
-PUT http://localhost:5000/artists/ckqv0gm7k0000lt6v3ns84oso
-Content-Type: application/json
+PUT http://localhost:5000/artists/ckrjm0dl10000bvvldjkz93j8
 
 {
   "name":"adzad",
-    "picture": "strqdqzdzqqzdqzdqing"
+  "picture": "strqdqzdzqqzdqzdqing"
 }
