@@ -5,6 +5,7 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
+    previewFeatures = ["referentialActions"]
 }
 
 model User {
@@ -25,10 +26,10 @@ model Song {
   title      String    @unique
   s3Link     String
   duration   String
-  album      Album     @relation(fields: [albumId], references: [id])
+  album      Album     @relation(fields: [albumId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   albumId    String
-  artist     Artist    @relation(fields: [artistId], references: [id])
-  playlists  Playlist? @relation(fields: [playlistId], references: [id])
+  artist     Artist    @relation(fields: [artistId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  playlists  Playlist? @relation(fields: [playlistId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   playlistId String?
   artistId   String
   createdAt  DateTime  @default(now())
@@ -39,7 +40,7 @@ model Album {
   id        String   @id @default(cuid())
   title     String   @unique
   picture   String?
-  artist    Artist   @relation(fields: [artistId], references: [id])
+  artist    Artist   @relation(fields: [artistId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   artistId  String
   songs     Song[]
   createdAt DateTime @default(now())
@@ -62,7 +63,7 @@ model Playlist {
   description String?
   picture     String?
   songs       Song[]
-  user        User     @relation(fields: [userId], references: [id])
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId      String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt

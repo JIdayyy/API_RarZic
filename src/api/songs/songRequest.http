@@ -1,1 +1,15 @@
 GET http://localhost:5000/songs/
+
+###
+
+
+GET http://localhost:5000/songs/ckrivehcg0002k1vl8z69bf1q
+
+
+###
+PUT http://localhost:5000/songs/ckrivehcg0002k1vl8z69bf1q
+Content-Type:  application/json
+
+{
+    "title":"Rivage(Prod. Le Motel)"
+}

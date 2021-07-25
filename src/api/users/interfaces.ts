@@ -1,10 +1,10 @@
 import { RequestHandler } from "express";
-
+import { Role } from ".prisma/client";
 export interface UserWithoutPassword {
   firstName: string | null;
   lastName: string | null;
   username: string;
-  roles: Array<string>;
+  role: Role;
 }
 interface ReqBodyUserPost {
   firstName: string | null;
@@ -12,15 +12,15 @@ interface ReqBodyUserPost {
   password: string;
   confirmPassword: string;
   username: string;
-  roles: Array<string>;
+  role: Role;
 }
 interface ReqBodyUserPut {
-  firstName: string | null;
-  lastName: string | null;
-  password: string;
-  username: string;
-  roles: Array<string>;
-  createdAt: Date;
+  firstName?: string | null;
+  lastName?: string | null;
+  password?: string;
+  username?: string;
+  role?: Role;
+  createdAt?: Date;
 }
 
 export default interface UserHandlers {
