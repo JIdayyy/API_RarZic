@@ -10,7 +10,7 @@ function checkRole(req: any, res: any, next: NextFunction): void {
     }
 
     req.user = jwt.verify(token, process.env.TOKEN_SECRET as string);
-    console.log(req.user);
+
     if (req.user.role !== "ADMIN") {
       throw new Error("Only administrators can acces this ressource");
     }
