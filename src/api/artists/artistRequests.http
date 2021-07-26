@@ -1,7 +1,7 @@
 GET http://localhost:5000/artists/
 
 ###
-GET http://localhost:5000/artists/ckqv422q90000j1vlmzunf2tm
+GET http://localhost:5000/artists/ckrjtsnga0005e2vlvb8ybedn
 
 ###
 GET http://localhost:5000/artists/ckqv422q90000j1vlmzunf2tm/albums
