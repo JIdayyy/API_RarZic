@@ -1,4 +1,4 @@
-import { Playlist } from ".prisma/client";
+import { Playlist, User, Song } from ".prisma/client";
 import { Queries } from "../..";
 
 export const playlistQuery: Queries<Playlist | Playlist[], { id: string }> = {
@@ -10,5 +10,27 @@ export const playlistQuery: Queries<Playlist | Playlist[], { id: string }> = {
   },
   playlists: (parent, args, { prisma }) => {
     return prisma.playlist.findMany();
+  },
+};
+
+export const playlistRelationResolver: Queries<
+  User | null | Song[],
+  { id: string }
+> = {
+  user: (parent, args, { prisma }) => {
+    return prisma.playlist
+      .findFirst({
+        where: { id: parent.id },
+        rejectOnNotFound: true,
+      })
+      .user();
+  },
+  songs: (parent, args, { prisma }) => {
+    return prisma.playlist
+      .findFirst({
+        where: { id: parent.id },
+        rejectOnNotFound: true,
+      })
+      .songs();
   },
 };
