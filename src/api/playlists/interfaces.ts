@@ -23,15 +23,6 @@ export interface PlaylistBodyPut {
   userId: string;
 }
 
-export interface PlaylistWithSongs {
-  id: string;
-  title: string;
-  description?: string | null;
-  picture?: string | null;
-  songs: Song[];
-  userId: string;
-}
-
 export default interface PlaylistHandlers {
   getAll: RequestHandler<Record<string, never>, Playlist[], null>;
   getOne: RequestHandler<{ id: string }, Playlist | Error, null>;
@@ -42,9 +33,5 @@ export default interface PlaylistHandlers {
   >;
   put: RequestHandler<Record<string, never>, Playlist | Error, PlaylistBodyPut>;
   deleteOne: RequestHandler<{ id: string }, null, null>;
-  getOnePlaylistWithSongs: RequestHandler<
-    { id: string },
-    PlaylistWithSongs | Error,
-    null
-  >;
+  getOnePlaylistWithSongs: RequestHandler<{ id: string }, Song[] | Error, null>;
 }

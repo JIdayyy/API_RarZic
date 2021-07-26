@@ -1,6 +1,9 @@
 GET http://localhost:5000/albums
 
 ###
+GET http://localhost:5000/albums/ckrjtsnga0003e2vlamg9bsjq/songs
+
+###
 POST http://localhost:5000/albums/
 Content-Type: application/json
 

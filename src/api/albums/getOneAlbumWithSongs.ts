@@ -9,22 +9,14 @@ const getOneAlbumWithSongs: AlbumHandlers["getOneAlbumWithSongs"] = async (
 ) => {
   const { id } = req.params;
   try {
-    const album = await prisma.album.findFirst({
-      where: {
-        id,
-      },
-      include: {
-        songs: {
-          select: {
-            id: true,
-            title: true,
-            duration: true,
-            s3Link: true,
-          },
+    const album = await prisma.album
+      .findFirst({
+        where: {
+          id,
         },
-      },
-      rejectOnNotFound: true,
-    });
+        rejectOnNotFound: true,
+      })
+      .songs();
     return res.status(200).json(album);
   } catch (error) {
     return next(error);

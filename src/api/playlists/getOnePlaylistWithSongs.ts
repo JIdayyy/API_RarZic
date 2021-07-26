@@ -6,27 +6,16 @@ const getOnePlaylistWithSongs: PlaylistHandlers["getOnePlaylistWithSongs"] =
   async (req, res, next) => {
     const { id } = req.params;
     try {
-      const artist = await prisma.playlist.findFirst({
-        where: {
-          id,
-        },
-        include: {
-          songs: {
-            select: {
-              id: true,
-              s3Link: true,
-              title: true,
-              duration: true,
-              createdAt: true,
-              updatedAt: true,
-              artistId: true,
-              albumId: true,
-            },
+      const playlist = await prisma.playlist
+        .findFirst({
+          where: {
+            id,
           },
-        },
-        rejectOnNotFound: true,
-      });
-      return res.status(200).json(artist);
+
+          rejectOnNotFound: true,
+        })
+        .songs();
+      return res.status(200).json(playlist);
     } catch (error) {
       return next(error);
     }

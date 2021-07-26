@@ -39,9 +39,5 @@ export default interface AlbumHandlers {
   post: RequestHandler<Record<string, never>, Album | Error, AlbumBodyPost>;
   put: RequestHandler<Record<string, never>, Album | Error, AlbumBodyPut>;
   deleteOne: RequestHandler<{ id: string }, null, null>;
-  getOneAlbumWithSongs: RequestHandler<
-    { id: string },
-    AlbumWithSongs | Error,
-    null
-  >;
+  getOneAlbumWithSongs: RequestHandler<{ id: string }, Album[] | Error, null>;
 }
