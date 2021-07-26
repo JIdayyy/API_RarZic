@@ -23,7 +23,7 @@ const post: AuthHandler["login"] = async (req, res, next) => {
       {
         username: user.username,
         id: user.id,
-        role: "USER",
+        role: user.role,
       },
       process.env.TOKEN_SECRET as string,
       {

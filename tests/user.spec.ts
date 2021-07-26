@@ -1,10 +1,8 @@
-import { PrismaClient } from '.prisma/client';
+import prisma from "../prisma/client";
 import request from "supertest";
 import faker from "faker";
 
 import app from "../src/app";
-
-const prisma = new PrismaClient()
 
 describe("Users Ressources", () => {
   test("Get status 200 and array of users", async () => {
@@ -32,7 +30,6 @@ describe("Users Ressources", () => {
       .expect(200)
       .expect("Content-Type", /json/);
 
-
     expect(res.body).toHaveProperty("lastName", sampleUser.lastName);
     expect(res.body).not.toHaveProperty("password");
   });
@@ -44,7 +41,6 @@ describe("Users Ressources", () => {
       username: faker.name.firstName(),
       password: "OvjXgSmZzmbL6bL",
       confirmPassword: "o1wIL8kEIz_i0mx",
-      
     };
 
     await request(app).post(`/users`).send(sampleUser).expect(422);
